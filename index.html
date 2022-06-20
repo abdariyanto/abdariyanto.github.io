@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panto</title>
+    <link
+      rel="stylesheet"
+      href="./font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      .container1 {
+        background-image: url("background.svg");
+        background-position: center center;
+        background-size: cover;
+        height: 1084px;
+        font-family: "Gilroy-Bold";
+      }
+      .container2 {
+        margin-bottom: 120px;
+        margin-top: 120px;
+      }
+      .container4 {
+        margin-bottom: 240px;
+        margin-top: 240px;
+      }
+      .container6 {
+        padding-bottom: 118px;
+        padding-top: 118px;
+      }
+      .container-fluid {
+        font-family: "Gilroy-Bold";
+      }
+      .navbar-nav > li {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      .navbar-brand {
+        /* Panto */
+
+        font-size: 28px;
+        line-height: 33px;
+        letter-spacing: 0.01em;
+        color: white;
+      }
+      .navbar-nav a {
+        /* Panto */
+
+        font-size: 18px;
+        line-height: 33px;
+        letter-spacing: 0.01em;
+        color: white;
+      }
+      .judul {
+        width: 861px;
+        height: 208px;
+
+        font-size: 80px;
+        line-height: 130%;
+        /* or 104px */
+        color: white;
+        text-align: center;
+        letter-spacing: -0.01em;
+        text-transform: capitalize;
+      }
+      .judul2 {
+        width: 389px;
+        height: 52px;
+        font-size: 42px;
+        line-height: 49px;
+        color: #1e1e1e;
+        font-weight: bold;
+        text-align: center;
+      }
+      .deskripsi {
+        width: 606px;
+        height: 76px;
+        left: 418px;
+        top: 383px;
+        font-family: "Gilroy-Regular";
+        font-size: 24px;
+        line-height: 160%;
+        text-align: center;
+        color: #ffffff;
+        opacity: 0.8;
+      }
+      .searching_1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 8px 8px 8px 20px;
+        width: 344px;
+        height: 56px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 0.861538px solid rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(8px);
+        border-radius: 42px;
+      }
+      .form-control {
+        background: none;
+        border: none;
+      }
+      .form-control:focus {
+        background: none;
+        border: none;
+        color: white;
+      }
+      .header2 {
+        font-size: 42px;
+        line-height: 49px;
+        text-transform: capitalize;
+        font-weight: bold;
+      }
+      .header_orange {
+        font-family: "Gilroy-SemiBold";
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 0.175em;
+        text-transform: uppercase;
+        color: #e58411;
+      }
+      .footer_header {
+        /* Services */
+        height: 22px;
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: -0.231818px;
+        color: #f6973f;
+      }
+      .max_descripsi {
+        position: absolute;
+        width: 556px;
+        height: 132px;
+        font-family: "Gilroy-Regular";
+        font-size: 18px;
+        line-height: 185%;
+        color: #1e1e1e;
+        opacity: 0.8;
+      }
+      .header3 {
+        font-size: 24px;
+        line-height: 28px;
+        color: #1e1e1e;
+        opacity: 0.9;
+        font-weight: bold;
+      }
+      .more_info {
+        color: #e58411;
+      }
+      .selector {
+        position: relative;
+        width: 348px;
+        background-color: #eeeeee;
+        height: 34px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 32px;
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+      }
+      .selecotr-item {
+        position: relative;
+        flex-basis: calc(70% / 4);
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .selector-item_radio {
+        appearance: none;
+        display: none;
+      }
+      .selector-item_label {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        border-radius: 32px;
+        height: 29px;
+        font-size: 18px;
+        transition-duration: 0.5s;
+        transition-property: transform, color, box-shadow;
+        transform: none;
+      }
+      .selector-item_radio:checked + .selector-item_label {
+        background-color: white;
+        color: black;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.5);
+        /* transform: translateY(-2px); */
+      }
+      @media (min-width: 768px) and (max-width: 991px) {
+        .carousel-inner
+          .active.col-md-4.carousel-item
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item {
+          position: absolute;
+          top: 0;
+          right: -33.3333%; /*change this with javascript in the future*/
+          z-index: -1;
+          display: block;
+          visibility: visible;
+        }
+      }
+      @media (min-width: 576px) and (max-width: 768px) {
+        .carousel-inner
+          .active.col-sm-6.carousel-item
+          + .carousel-item
+          + .carousel-item {
+          position: absolute;
+          top: 0;
+          right: -50%; /*change this with javascript in the future*/
+          z-index: -1;
+          display: block;
+          visibility: visible;
+        }
+      }
+      @media (min-width: 576px) {
+        .carousel-item {
+          margin-right: 0;
+        }
+        /* show 2 items */
+        .carousel-inner .active + .carousel-item {
+          display: block;
+        }
+        .carousel-inner
+          .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+        .carousel-inner
+          .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
+          + .carousel-item {
+          transition: none;
+        }
+        .carousel-inner .carousel-item-next {
+          position: relative;
+          transform: translate3d(0, 0, 0);
+        }
+        /* left or forward direction */
+        .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+        .carousel-item-next.carousel-item-left + .carousel-item,
+        .carousel-item-next.carousel-item-left
+          + .carousel-item
+          + .carousel-item {
+          position: relative;
+          transform: translate3d(-100%, 0, 0);
+          visibility: visible;
+        }
+        /* farthest right hidden item must be also positioned for animations */
+        .carousel-inner .carousel-item-prev.carousel-item-right {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          display: block;
+          visibility: visible;
+        }
+        /* right or prev direction */
+        .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+        .carousel-item-prev.carousel-item-right + .carousel-item,
+        .carousel-item-prev.carousel-item-right
+          + .carousel-item
+          + .carousel-item {
+          position: relative;
+          transform: translate3d(100%, 0, 0);
+          visibility: visible;
+          display: block;
+          visibility: visible;
+        }
+      }
+      /* MD */
+      @media (min-width: 768px) {
+        /* show 3rd of 3 item slide */
+        .carousel-inner .active + .carousel-item + .carousel-item {
+          display: block;
+        }
+        .carousel-inner
+          .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
+          + .carousel-item
+          + .carousel-item {
+          transition: none;
+        }
+        .carousel-inner .carousel-item-next {
+          position: relative;
+          transform: translate3d(0, 0, 0);
+        }
+        /* left or forward direction */
+        .carousel-item-next.carousel-item-left
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item {
+          position: relative;
+          transform: translate3d(-100%, 0, 0);
+          visibility: visible;
+        }
+        /* right or prev direction */
+        .carousel-item-prev.carousel-item-right
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item {
+          position: relative;
+          transform: translate3d(100%, 0, 0);
+          visibility: visible;
+          display: block;
+          visibility: visible;
+        }
+      }
+      /* LG */
+      @media (min-width: 991px) {
+        /* show 4th item */
+        .carousel-inner
+          .active
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item {
+          display: block;
+        }
+        .carousel-inner
+          .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item {
+          transition: none;
+        }
+        /* Show 5th slide on lg if col-lg-3 */
+        .carousel-inner
+          .active.col-lg-3.carousel-item
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item {
+          position: absolute;
+          top: 0;
+          right: -25%; /*change this with javascript in the future*/
+          z-index: -1;
+          display: block;
+          visibility: visible;
+        }
+        .carousel-inner
+          .active.col-lg-4.carousel-item
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item {
+          position: absolute;
+          top: 0;
+          right: -25%; /*change this with javascript in the future*/
+          z-index: -1;
+          display: block;
+          visibility: visible;
+        }
+        /* left or forward direction */
+        .carousel-item-next.carousel-item-left
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item {
+          position: relative;
+          transform: translate3d(-100%, 0, 0);
+          visibility: visible;
+        }
+        /* right or prev direction //t - previous slide direction last item animation fix */
+        .carousel-item-prev.carousel-item-right
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item
+          + .carousel-item {
+          position: relative;
+          transform: translate3d(100%, 0, 0);
+          visibility: visible;
+          display: block;
+          visibility: visible;
+        }
+      }
+      .carousel-control-prev-icon {
+        background-image: url("./prev.svg") !important;
+        width: 50px;
+        height: 50px;
+        top: 10px;
+      }
+      .carousel-control-next-icon {
+        background-image: url("./next.svg") !important;
+        width: 50px;
+        height: 50px;
+      }
+      .card-img-top {
+        width: 268.09px;
+        height: 255.9px;
+      }
+      .card {
+        width: 268.09px;
+      }
+      .type_kursi {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16.7554px;
+        line-height: 20px;
+        color: #8d8d8d;
+      }
+      .nama_kursi {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 21.3251px;
+        line-height: 26px;
+        text-transform: capitalize;
+        color: #0d1b39;
+      }
+      .harga_kursi {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 21.3251px;
+        line-height: 26px;
+        text-transform: capitalize;
+        color: #0d1b39;
+        margin-left: 21.33px;
+      }
+      .icon_dollar {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15.2322px;
+        line-height: 18px;
+        text-transform: capitalize;
+        color: #0d1b39;
+      }
+      @media (min-width: 992px) {
+        .col-lg-3-x {
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 25%;
+          flex: 0 0 15%;
+          max-width: 15%;
+        }
+      }
+      .link_footer,
+      .link_footer:after {
+        color: black;
+        cursor: pointer;
+      }
+      .deskripsi_review {
+        font-family: "Gilroy-Bold";
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: bold;
+        color: #1e1e1e;
+      }
+      .deskripsi_pekerjaan {
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        color: #1e1e1e;
+        opacity: 0.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid container1">
+      <div class="col-md-12 col-sm-12 col-lg-12">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="#">Panto</a>
+          <ul class="navbar-nav ml-auto mr-auto mt-4">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Furniture
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="nav-item ml-auto">
+              <img src="./icon.svg" width="34" height="34" />
+            </li>
+          </ul>
+        </nav>
+        <div class="row" style="margin-top: 92px">
+          <h1 class="ml-auto mr-auto judul">
+            Make your interior more minimalistic & modern
+          </h1>
+        </div>
+        <div class="row">
+          <span class="ml-auto mr-auto deskripsi mt-4">
+            Turn your room with panto into a lot more minimalist and modern with
+            ease and speed
+          </span>
+        </div>
+        <div class="row" style="margin-top: 30px">
+          <div class="input-group searching_1 mx-auto">
+            <input
+              class="form-control"
+              id="search"
+              type="search"
+              placeholder="Search furniture"
+              id="example-search-input"
+            />
+            <span class="input-group-append">
+              <a type="submit">
+                <img
+                  src="./search.svg"
+                  class=""
+                  height="40"
+                  width="40"
+                  alt=""
+                />
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container2">
+      <div class="row mt-4 ml-4 mr-4">
+        <div class="col-md-3 mt-auto mb-auto">
+          <h3 class="header2">
+            Why <br />
+            Choosing Us
+          </h3>
+        </div>
+        <div class="col-md-3">
+          <p class="header3">Luxury facilities</p>
+          <p class="text-justify">
+            The advantage of hiring a workspace with us is that givees you
+            comfortable service and all-around facilities.
+          </p>
+          <a
+            class="more_info"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            >More Info <img class="ml-2" src="./panah.svg"
+          /></a>
+        </div>
+        <div class="col-md-3">
+          <p class="header3">Affordable Price</p>
+          <p class="text-justify">
+            You can get a workspace of the highst quality at an affordable price
+            and still enjoy the facilities that are oly here.
+          </p>
+          <a
+            class="more_info"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            >More Info <img class="ml-2" src="./panah.svg"
+          /></a>
+        </div>
+        <div class="col-md-3">
+          <p class="header3">Many Choices</p>
+          <p class="text-justify">
+            We provide many unique work space choices so that you can choose the
+            workspace to your liking.
+          </p>
+          <a
+            class="more_info"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            >More Info <img class="ml-2" src="./panah.svg"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container3" style="background-color: #f7f7f7">
+      <div class="row mt-4">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+          <h2 class="judul2 mx-auto mt-4">Best Selling Product</h2>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="selector mx-auto">
+          <div class="selecotr-item">
+            <input
+              type="radio"
+              id="radio1"
+              name="selector"
+              class="selector-item_radio"
+              checked
+            />
+            <label for="radio1" class="selector-item_label">Chair</label>
+          </div>
+          <div class="selecotr-item">
+            <input
+              type="radio"
+              id="radio2"
+              name="selector"
+              class="selector-item_radio"
+            />
+            <label for="radio2" class="selector-item_label">Beds</label>
+          </div>
+          <div class="selecotr-item">
+            <input
+              type="radio"
+              id="radio3"
+              name="selector"
+              class="selector-item_radio"
+            />
+            <label for="radio3" class="selector-item_label">Sofa</label>
+          </div>
+          <div class="selecotr-item">
+            <input
+              type="radio"
+              id="radio4"
+              name="selector"
+              class="selector-item_radio"
+            />
+            <label for="radio4" class="selector-item_label">Lamp</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4 ml-4 mr-4 mb-4">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div
+            id="carousel-example"
+            class="carousel slide"
+            data-ride="carousel"
+          >
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+              <div
+                class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active"
+              >
+                <img
+                  src="./bangku.svg"
+                  class="card-img-top img-fluid"
+                  alt="img1"
+                />
+                <div
+                  class="card"
+                  style="
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                  "
+                >
+                  <div class="card-body">
+                    <p class="card-text type_kursi">Chair</p>
+                    <h5 class="card-title nama_kursi">Sakarias Armchair</h5>
+                    <div class="row flex mt-2">
+                      <h4 class="card-title harga_kursi">
+                        <span class="icon_dollar">&#36;</span>100
+                      </h4>
+                      <a
+                        href="#"
+                        class="ml-auto mr-2"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src="./tambah.svg"
+                          width="48.74px"
+                          height="48.74px"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                <img
+                  src="./bangku2.svg"
+                  class="card-img-top img-fluid"
+                  alt="img1"
+                />
+                <div
+                  class="card"
+                  style="
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                  "
+                >
+                  <div class="card-body">
+                    <p class="card-text type_kursi">Chair</p>
+                    <h5 class="card-title nama_kursi">Baltsar Chair</h5>
+                    <div class="row flex mt-2">
+                      <h4 class="card-title harga_kursi">
+                        <span class="icon_dollar">&#36;</span>100
+                      </h4>
+                      <a
+                        href="#"
+                        class="ml-auto mr-2"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src="./tambah.svg"
+                          width="48.74px"
+                          height="48.74px"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                <img
+                  src="./bangku3.svg"
+                  class="card-img-top img-fluid"
+                  alt="img1"
+                />
+                <div
+                  class="card"
+                  style="
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                  "
+                >
+                  <div class="card-body">
+                    <p class="card-text type_kursi">Chair</p>
+                    <h5 class="card-title nama_kursi">Anjay Chair</h5>
+                    <div class="row flex mt-2">
+                      <h4 class="card-title harga_kursi">
+                        <span class="icon_dollar">&#36;</span>100
+                      </h4>
+                      <a
+                        href="#"
+                        class="ml-auto mr-2"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src="./tambah.svg"
+                          width="48.74px"
+                          height="48.74px"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                <img
+                  src="./bangku4.svg"
+                  class="card-img-top img-fluid"
+                  alt="img1"
+                />
+                <div
+                  class="card"
+                  style="
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                  "
+                >
+                  <div class="card-body">
+                    <p class="card-text type_kursi">Chair</p>
+                    <h5 class="card-title nama_kursi">Nyantuy Chair</h5>
+                    <div class="row flex mt-2">
+                      <h4 class="card-title harga_kursi">
+                        <span class="icon_dollar">&#36;</span>100
+                      </h4>
+                      <a
+                        href="#"
+                        class="ml-auto mr-2"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src="./tambah.svg"
+                          width="48.74px"
+                          height="48.74px"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                <img
+                  src="./bangku.svg"
+                  class="card-img-top img-fluid"
+                  alt="img1"
+                />
+                <div
+                  class="card"
+                  style="
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                  "
+                >
+                  <div class="card-body">
+                    <p class="card-text type_kursi">Chair</p>
+                    <h5 class="card-title nama_kursi">Sakarias Armchair</h5>
+
+                    <div class="row flex mt-2">
+                      <h4 class="card-title harga_kursi">
+                        <span class="icon_dollar">&#36;</span>100
+                      </h4>
+                      <a
+                        href="#"
+                        class="ml-auto mr-2"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src="./tambah.svg"
+                          width="48.74px"
+                          height="48.74px"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                <img
+                  src="./bangku2.svg"
+                  class="card-img-top img-fluid"
+                  alt="img1"
+                />
+                <div
+                  class="card"
+                  style="
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                  "
+                >
+                  <div class="card-body">
+                    <p class="card-text type_kursi">Chair</p>
+                    <h5 class="card-title nama_kursi">Baltsar Chair</h5>
+                    <div class="row flex mt-2">
+                      <h4 class="card-title harga_kursi">
+                        <span class="icon_dollar">&#36;</span>100
+                      </h4>
+                      <a
+                        href="#"
+                        class="ml-auto mr-2"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src="./tambah.svg"
+                          width="48.74px"
+                          height="48.74px"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                <img
+                  src="./bangku3.svg"
+                  class="card-img-top img-fluid"
+                  alt="img1"
+                />
+                <div
+                  class="card"
+                  style="
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                  "
+                >
+                  <div class="card-body">
+                    <p class="card-text type_kursi">Chair</p>
+                    <h5 class="card-title nama_kursi">Anjay Chair</h5>
+
+                    <div class="row flex mt-2">
+                      <h4 class="card-title harga_kursi">
+                        <span class="icon_dollar">&#36;</span>100
+                      </h4>
+                      <a
+                        href="#"
+                        class="ml-auto mr-2"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src="./tambah.svg"
+                          width="48.74px"
+                          height="48.74px"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                <img
+                  src="./bangku4.svg"
+                  class="card-img-top img-fluid"
+                  alt="img1"
+                />
+                <div
+                  class="card"
+                  style="
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                  "
+                >
+                  <div class="card-body">
+                    <p class="card-text type_kursi">Chair</p>
+                    <h5 class="card-title nama_kursi">Nyantuy Chair</h5>
+                    <div class="row flex mt-2">
+                      <h4 class="card-title harga_kursi">
+                        <span class="icon_dollar">&#36;</span>100
+                      </h4>
+                      <a
+                        href="#"
+                        class="ml-auto mr-2"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src="./tambah.svg"
+                          width="48.74px"
+                          height="48.74px"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carousel-example"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carousel-example"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-4 pb-4">
+        <a
+          class="more_info mx-auto"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          >View All <img class="ml-2" src="./panah.svg"
+        /></a>
+      </div>
+    </div>
+    <div class="row container4">
+      <div class="col-sm-12 col-md-6 col-lg-6 pl-0">
+        <img src="" alt="" />
+        <img src="./image-2.svg" width="500" height="445" alt="" />
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <p class="header_orange">experiences</p>
+        <h3 class="header2">
+          we provide you the <br />
+          best experience
+        </h3>
+        <p class="text-justify max_descripsi">
+          You don’t have to worry about the result because all of these
+          interiors are made by people who are professionals in their fields
+          with an elegant and lucurious style and with premium quality materials
+        </p>
+      </div>
+    </div>
+    <div class="row container4">
+      <div class="col-sm-12 col-md-4 col-lg-4 ml-5" style="">
+        <p class="header_orange">Materials</p>
+        <h3 class="header2">Very serious materials for making furniture</h3>
+        <p class="text-justify max_descripsi">
+          You don’t have to worry about the result because all of these
+          interiors are made by people who are professionals in their fields
+          with an elegant and lucurious style and with premium quality materials
+        </p>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3" style="right: -220px">
+        <img
+          src="./image-kecil-1.svg"
+          class="pb-4"
+          width="223px"
+          height="229px"
+          alt=""
+        />
+        <br />
+        <img
+          src="./image-kecil-2.svg"
+          style="width: 223px; height: 317px"
+          alt=""
+        />
+      </div>
+      <div class="col-lg-3 mr-0 pr-0">
+        <img
+          src="./image-3.svg"
+          width="629px"
+          height="445px"
+          alt=""
+          style="
+            z-index: 999;
+            position: absolute;
+            right: -307px;
+            top: 100px;
+            overflow: unset;
+          "
+        />
+      </div>
+    </div>
+    <div class="container-fluid container5">
+      <div class="row mt-4">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+          <p class="header_orange mx-auto mt-6" style="text-align: center">
+            Testimonials
+          </p>
+          <h2 class="judul2 mx-auto mt-4">Our Client Reviews</h2>
+        </div>
+      </div>
+      <div class="row mt-4 mb-4">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div
+            id="carousel-example1"
+            class="carousel slide"
+            data-ride="carousel"
+          >
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+              <div class="carousel-item col-sm-6 col-md-4 col-lg-4 active">
+                <div class="card img-fluid" style="width: 370px; height: 476px">
+                  <img
+                    class="card-img-top"
+                    src="./background-review1.svg"
+                    alt="Card image"
+                    style="height: 100%; width: 100%"
+                  />
+                  <div class="card-img-overlay">
+                    <div
+                      class="row bg-white h-50"
+                      style="border-radius: 10px; margin-top: 200px"
+                    >
+                      <img
+                        src="./pp1.svg"
+                        width="76px"
+                        height="76px"
+                        alt=""
+                        style="
+                          align-items: center;
+                          border: 5px solid white;
+                          border-radius: 50px;
+                          background-color: white;
+                          margin-top: -40px;
+                          margin-left: 145px;
+                        "
+                      />
+                      <p
+                        class="mb-0 deskripsi_review"
+                        style="margin-top: auto; margin-left: -67px"
+                      >
+                        Bang Upin
+                      </p>
+                      <br />
+                      <p class="mb-0 deskripsi_pekerjaan" style="margin-left: 152px">
+                        Pedagang Asongan
+                      </p>
+
+                      <p
+                        class="mt-0 mb-0"
+                        style="margin-left: 40px; margin-right: 40px"
+                      >
+                        “Terimakasih banyak, kini ruanganku menjadi lebih mewah
+                        dan terlihat mahal“
+                      </p>
+                      <div class="row d-flex">
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 150px"
+                        />
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 10px"
+                        />
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 10px"
+                        />
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 10px"
+                        />
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 10px"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item col-sm-6 col-md-4 col-lg-4">
+                <div class="card img-fluid" style="width: 370px; height: 476px">
+                  <img
+                    class="card-img-top"
+                    src="./background-review2.svg"
+                    alt="Card image"
+                    style="height: 100%; width: 100%"
+                  />
+                  <div class="card-img-overlay">
+                    <div
+                      class="row bg-white h-50"
+                      style="border-radius: 10px; margin-top: 200px"
+                    >
+                      <img
+                        src="./pp1.svg"
+                        width="76px"
+                        height="76px"
+                        alt=""
+                        style="
+                          align-items: center;
+                          border: 5px solid white;
+                          border-radius: 50px;
+                          background-color: white;
+                          margin-top: -40px;
+                          margin-left: 145px;
+                        "
+                      />
+                      <p
+                        class="mb-0 deskripsi_review"
+                        style="margin-top: auto; margin-left: -67px"
+                      >
+                        Bang Upin
+                      </p>
+                      <br />
+                      <p class="mb-0 deskripsi_pekerjaan" style="margin-left: 152px">
+                        Pedagang Asongan
+                      </p>
+
+                      <p
+                        class="mt-0 mb-0"
+                        style="margin-left: 40px; margin-right: 40px"
+                      >
+                        “Terimakasih banyak, kini ruanganku menjadi lebih mewah
+                        dan terlihat mahal“
+                      </p>
+                      <div class="row d-flex">
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 150px"
+                        />
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 10px"
+                        />
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 10px"
+                        />
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 10px"
+                        />
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 10px"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item col-sm-6 col-md-4 col-lg-4">
+                <div class="card img-fluid" style="width: 370px; height: 476px">
+                  <img
+                    class="card-img-top"
+                    src="./background-review3.svg"
+                    alt="Card image"
+                    style="height: 100%; width: 100%"
+                  />
+                  <div class="card-img-overlay">
+                    <div
+                      class="row bg-white h-50"
+                      style="border-radius: 10px; margin-top: 200px"
+                    >
+                      <img
+                        src="./pp1.svg"
+                        width="76px"
+                        height="76px"
+                        alt=""
+                        style="
+                          align-items: center;
+                          border: 5px solid white;
+                          border-radius: 50px;
+                          background-color: white;
+                          margin-top: -40px;
+                          margin-left: 145px;
+                        "
+                      />
+                      <p
+                        class="mb-0 deskripsi_review"
+                        style="margin-top: auto; margin-left: -67px"
+                      >
+                        Bang Upin
+                      </p>
+                      <br />
+                      <p class="mb-0 deskripsi_pekerjaan" style="margin-left: 152px">
+                        Pedagang Asongan
+                      </p>
+
+                      <p
+                        class="mt-0 mb-0"
+                        style="margin-left: 40px; margin-right: 40px"
+                      >
+                        “Terimakasih banyak, kini ruanganku menjadi lebih mewah
+                        dan terlihat mahal“
+                      </p>
+                      <div class="row d-flex">
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 150px"
+                        />
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 10px"
+                        />
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 10px"
+                        />
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 10px"
+                        />
+                        <img
+                          src="./bintang.svg"
+                          alt=""
+                          style="margin-left: 10px"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carousel-example1"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carousel-example1"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container-fluid container6 mt-5"
+      style="background-color: #f7f7f7"
+    >
+      <div class="row mt-5 ml-4 mr-4">
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <p class="header3">Panto</p>
+          <p class="text-justify">
+            The advantage of hiring a workspace with us is that givees you
+            comfortable service and all-around facilities.
+          </p>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <p class="footer_header">Services</p>
+          <p>Email Marketing</p>
+          <p>Campaigns</p>
+          <p>Branding</p>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <p class="footer_header">Furniture</p>
+          <p>Beds</p>
+          <p>Chair</p>
+          <p>All</p>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <p class="footer_header">Follow Us</p>
+          <a
+            class="link_footer"
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><p><img src="./facebook.svg" alt="" class="mr-4" />Facebook</p></a
+          >
+          <a
+            class="link_footer"
+            href="https://www.twitter.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><p><img src="./twitter.svg" alt="" class="mr-3" />Twitter</p></a
+          >
+          <a
+            class="link_footer"
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><p>
+              <img src="./instagram.svg" alt="" class="mr-3" />Instagram
+            </p></a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <script type="text/javascript">
+    $("#carousel-example").carousel({
+      interval: false,
+    });
+    $("#carousel-example1").carousel({
+      interval: false,
+    });
+    $("#carousel-example").on("slide.bs.carousel", function (e) {
+      var $e = $(e.relatedTarget);
+      var idx = $e.index();
+      var itemsPerSlide = 8;
+      var totalItems = $(".carousel-item").length;
+
+      if (idx >= totalItems - (itemsPerSlide - 1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i = 0; i < it; i++) {
+          // append slides to end
+          if (e.direction == "left") {
+            $(".carousel-item").eq(i).appendTo(".carousel-inner");
+          } else {
+            $(".carousel-item").eq(0).appendTo(".carousel-inner");
+          }
+        }
+      }
+    });
+    $("#carousel-example1").on("slide.bs.carousel", function (e) {
+      var $e = $(e.relatedTarget);
+      var idx = $e.index();
+      var itemsPerSlide = 4;
+      var totalItems = $(".carousel-item").length;
+
+      if (idx >= totalItems - (itemsPerSlide - 1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i = 0; i < it; i++) {
+          // append slides to end
+          if (e.direction == "left") {
+            $(".carousel-item").eq(i).appendTo(".carousel-inner");
+          } else {
+            $(".carousel-item").eq(0).appendTo(".carousel-inner");
+          }
+          if (e.direction == "right") {
+            $(".carousel-item").eq(0).appendTo(".carousel-inner");
+          } else {
+            $(".carousel-item").eq(i).appendTo(".carousel-inner");
+          }
+        }
+      }
+    });
+  </script>
+</html>
